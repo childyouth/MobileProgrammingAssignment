@@ -28,6 +28,7 @@ public class RegistActivity extends AppCompatActivity {
     Context context = this;
 
     boolean id_ok = false;
+    boolean pw_ok = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,10 +93,12 @@ public class RegistActivity extends AppCompatActivity {
                     if(Pattern.matches("^(?=.*[!@#$%\\^&*])(?=\\S+$).{6,15}$", pw)){
                         tv_pw_check.setTextColor(Color.BLUE);
                         tv_pw_check.setText("비밀번호를 사용할 수 있습니다.");
+                        pw_ok=true;
                     }
                     else{
                         tv_pw_check.setTextColor(Color.BLACK);
                         tv_pw_check.setText(R.string.regist_pw_check);
+                        pw_ok=false;
                     }
                 }
             }
@@ -105,6 +108,9 @@ public class RegistActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!id_ok){
                     makeAlert(context,"아이디 중복확인을 완료해주세요.");
+                }
+                else if(!pw_ok){
+                    makeAlert(context,"비밀번호 형식에 맞는지 확인해주세요.");
                 }
                 else if(rdogrp.getCheckedRadioButtonId() == rdobtn_no.getId()){
                     makeAlert(context,"약관에 동의해 주세요.");

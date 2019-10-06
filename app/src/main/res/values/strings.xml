@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MobileProgrammingAssignment</string>
+    <string name="regist_pw_check">PW를 입력하세요.(특수키(!@#$%^*&amp;?) 포함 6자리 이상,15자리 이하)</string>
 </resources>

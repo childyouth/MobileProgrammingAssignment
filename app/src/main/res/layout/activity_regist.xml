@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/id_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            android:hint="ID"/>
+        <Button
+            android:id="@+id/btn_id_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="중복 확인" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/pw_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="PW"
+            android:ems="10"
+            android:inputType="textPassword" />
+        <TextView
+            android:id="@+id/tv_pw_check"
+            android:textSize="5pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/regist_pw_check"
+            />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/name_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/phone_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Phone"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/address_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPostalAddress" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="안녕하세요 감사해요 잘있어요 다시 만나요 아침해가 뜨면 아침해가 뜨면 매일 같은 사람들과 ~~~~~~~~ 한번더 나에게 질풍 같은 용기를 거친 파도에도 굴하지않게
+피카츄 라이츄 파이리 꼬북이 버터풀 야돈나 피존투 또가스 서로가 생긴모습은 달라도 우리는 모두 친구 삐까 산에서 들에서 싸우며 뒹굴고 ㅁㄴ앎낭랑ㄴ란알ㄴ아란ㅇ란ㅁㅇ람ㄴ앎ㄴ앎낭ㄹ
+ㅁㄴㅇㄻㄴㅇ림나어롬ㄴㅇㄻㄴㅇ라ㅣ넝림ㄴ아럼ㄴ이;라ㅓㅁㄴㄹ;ㅣㅏㅁㄴ럼닝라먼ㄹ;ㅣㅏㅁㄴ럼ㄴ;이라ㅓㅁㄴㄹ이;ㄴ마런밍ㄹ;ㅏ먼ㄹ이;ㅁㄴ라ㅓㄴㅁㅇ리ㅏㅓ;
+당신의 정보는 중국으로 흘러갑니다. 감사합니다."/>
+
+            <RadioGroup
+                android:id="@+id/rdogrp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/rdobtn_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Accept" />
+
+                <RadioButton
+                    android:id="@+id/rdobtn_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Decline" />
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+
+</LinearLayout>

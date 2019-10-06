@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20pt"
+        android:text="모든 토글버튼을 on으로 만드세요"
+        />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
+
+            <Switch
+                android:id="@+id/switch3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Switch
+                android:id="@+id/switch6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <Switch
+                android:id="@+id/switch5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <Switch
+                android:id="@+id/switch4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Switch
+                android:id="@+id/switch9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <Switch
+                android:id="@+id/switch8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <Switch
+                android:id="@+id/switch7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Switch
+                android:id="@+id/switch12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <Switch
+                android:id="@+id/switch11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <Switch
+                android:id="@+id/switch10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:id="@+id/btn_reverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="모두 뒤집기"
+        />
+</LinearLayout>

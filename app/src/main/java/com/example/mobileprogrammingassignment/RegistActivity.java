@@ -27,6 +27,8 @@ public class RegistActivity extends AppCompatActivity {
 
     Context context = this;
 
+    String authorized_id = null;
+
     boolean id_ok = false;
     boolean pw_ok = false;
 
@@ -56,12 +58,14 @@ public class RegistActivity extends AppCompatActivity {
                 String new_id = id_field.getText().toString();
                 new_id = new_id.trim();
                 if(new_id.length() == 0) {
+                    authorized_id = null;
                     id_ok = false;
                     mDbOpenHelper.close();
                     return;
                 }
                 Cursor cursor = mDbOpenHelper.searchID(new_id);
                 cursor.moveToFirst();
+                authorized_id = new_id;
                 id_ok = true;
                 int cursorPos = 0;
 //                while(!cursor.moveToPosition(cursorPos+1) && (cursor != null) && (cursor.getCount() != 0)){
@@ -73,6 +77,7 @@ public class RegistActivity extends AppCompatActivity {
 //                    }
 //                }
                 if(!cursor.moveToPosition(cursorPos+1) && (cursor != null) && (cursor.getCount() != 0)){
+                    authorized_id = null;
                     id_ok = false;
                 }
                 if(id_ok){
@@ -106,7 +111,7 @@ public class RegistActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!id_ok){
+                if(!id_ok || !authorized_id.equals(id_field.getText().toString())){
                     makeAlert(context,"아이디 중복확인을 완료해주세요.");
                 }
                 else if(!pw_ok){

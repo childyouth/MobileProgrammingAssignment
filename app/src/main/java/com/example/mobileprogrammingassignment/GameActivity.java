@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 
 public class GameActivity extends AppCompatActivity {
@@ -26,25 +27,30 @@ public class GameActivity extends AppCompatActivity {
         btn_reverse = findViewById(R.id.btn_reverse);
         for(int i = 0;i<12;i++){
             switchs[i] = findViewById(switch_ids[i]);
-            switchs[i].setOnClickListener(onClickListener);
+            switchs[i].setOnCheckedChangeListener(onCheckedChangeListener);
         }
         btn_reverse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 for(int i = 0;i<12;i++){
+                    switchs[i].setOnCheckedChangeListener(null);
                     switchs[i].setChecked(!switchs[i].isChecked());
+                    switchs[i].setOnCheckedChangeListener(onCheckedChangeListener);
                 }
                 isGameEnd();
             }
         });
     }
-    View.OnClickListener onClickListener = new View.OnClickListener() {
+    CompoundButton.OnCheckedChangeListener onCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
         @Override
-        public void onClick(View v) {
-            int viewID = v.getId();
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            int viewID = buttonView.getId();
+            buttonView.setChecked(isChecked);
             for(int i = 0;i<12;i++){
                 if(switch_ids[i] == viewID){
+                    switchs[switch_trigger[i]].setOnCheckedChangeListener(null);
                     switchs[switch_trigger[i]].setChecked(!switchs[switch_trigger[i]].isChecked());
+                    switchs[switch_trigger[i]].setOnCheckedChangeListener(onCheckedChangeListener);
                     break;
                 }
             }
